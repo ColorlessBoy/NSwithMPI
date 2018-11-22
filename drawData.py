@@ -36,15 +36,15 @@ def plot(table):
     plt.savefig('log/log32.png')
 
 def draw(vx, vy):
-    plt.figure(figsize=(10, 10), dpi=100)
+    plt.figure(figsize=(12, 4), dpi=100)
     nx = len(vx)
     ny = len(vx[0])
     x = np.linspace(0, 0.05*(nx-1), nx)
     y = np.linspace(0, 0.05*(ny-1), ny)
-    X, Y = np.meshgrid(x, y)
-    plt.quiver(Y[::3, ::3], X[::3, ::3], vx[::3, ::3], vy[::3, ::3])
-    plt.xlabel('axis-y')
-    plt.ylabel('axis-x')
+    X, Y = np.meshgrid(y, x)
+    plt.quiver(Y[::100, ::10], X[::100, ::10], vx[::100, ::10], vy[::100, ::10])
+    plt.xlabel('axis-x')
+    plt.ylabel('axis-y')
     plt.title('Stream Velocity')
     plt.savefig('log/stream.png')
 
